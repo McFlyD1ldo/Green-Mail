@@ -1,5 +1,6 @@
 ﻿
 
+using FluentEmail.Core;
 using FluentEmail.Smtp;
 using MailKit.Net.Smtp;
 using MailKit.Security;
@@ -24,8 +25,7 @@ namespace clMailer
             {
                 client.Disconnect(true);
                 client.Connect(host, port, SecureSocketOptions.StartTls);
-                if (!client.IsConnected) return false;
-                else return true;
+                return client.IsConnected;
             }
             catch (Exception)
             {
@@ -39,7 +39,7 @@ namespace clMailer
         {
             if (client.IsConnected)
             {
-
+                client.Disconnect(true);
             }
         }
 
@@ -69,10 +69,39 @@ namespace clMailer
             return mail;
         }
 
+        private static List<MimeMessage> buildMassMail(List<string> adresses, EmailDto dto)
+        {
+            List<MimeMessage> mails = new();
+            foreach (var item in adresses)
+            {
+                MimeMessage mail = new();
+                mail.To.Add(MailboxAddress.Parse(item));
+                mail.Subject = dto.Subject;
+                mail.Sender = MailboxAddress.Parse(Username);
+                mail.Body = new TextPart(TextFormat.Html) { Text = dto.Body };
+                mails.Add(mail);
+            }
+            return mails;
+        }
+    
         public static async Task sendMail(EmailDto dto)
         {
             MimeMessage mail = buildEmail(dto);
             await client.SendAsync(mail);
+        }
+
+        public static async Task sendMail(MimeMessage mail)
+        {
+            await client.SendAsync(mail);
+        }
+
+        public static async Task sendMassMail(List<string> adresses, EmailDto dto)
+        {
+            List<MimeMessage> mails = buildMassMail(adresses, dto);
+            foreach (var item in mails)
+            {
+                await client.SendAsync(item);
+            }
         }
     }
 }
