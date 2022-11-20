@@ -8,16 +8,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using wfGreenMail.Data;
 
 namespace wfGreenMail
 {
     public partial class TEditForm : Form
     {
         Mailer mailer;
+        Contact Contact;
         public TEditForm(Mailer mailer)
         {
             this.mailer = mailer;
+            
             InitializeComponent();
+        }
+
+        public TEditForm(Mailer mailer, Contact contact)
+        {
+            Contact = contact;
+            this.mailer = mailer;
+            InitializeComponent();
+            edtEmail.Text = Contact.Email;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,7 +43,7 @@ namespace wfGreenMail
         {
             try
             {
-                EmailDto dto = new(Mailer.Username, textBox2.Text, textBox1.Text, mstHtmlEditor1.DocumentHTML);
+                EmailDto dto = new(Mailer.Username, edtEmail.Text, edtSubject.Text, mstHtmlEditor1.DocumentHTML);
                 await Mailer.sendMail(dto);
                 MessageBox.Show("E-Mail sent succesfully");
             }

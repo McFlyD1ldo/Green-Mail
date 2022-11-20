@@ -35,6 +35,9 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.edtSubject = new System.Windows.Forms.TextBox();
+            this.edtEmail = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -68,15 +71,17 @@
             this.mstHtmlEditor1.LanguageConfig = null;
             this.mstHtmlEditor1.Location = new System.Drawing.Point(3, 108);
             this.mstHtmlEditor1.Name = "mstHtmlEditor1";
+            this.mstHtmlEditor1.ShowEditorModeToolbar = false;
             this.mstHtmlEditor1.Size = new System.Drawing.Size(972, 494);
-            this.mstHtmlEditor1.TabIndex = 0;
+            this.mstHtmlEditor1.TabIndex = 2;
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.edtSubject);
+            this.panel1.Controls.Add(this.edtEmail);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
@@ -85,10 +90,13 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(71, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(356, 23);
-            this.textBox1.TabIndex = 0;
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Empfänger:";
             // 
             // textBox2
             // 
@@ -100,23 +108,34 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "Betreff:";
             // 
-            // label2
+            // edtSubject
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Empfänger:";
+            this.edtSubject.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.edtSubject.ForeColor = System.Drawing.Color.White;
+            this.edtSubject.Location = new System.Drawing.Point(71, 20);
+            this.edtSubject.Name = "edtSubject";
+            this.edtSubject.Size = new System.Drawing.Size(356, 23);
+            this.edtSubject.TabIndex = 0;
+            // 
+            // edtEmail
+            // 
+            this.edtEmail.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.edtEmail.ForeColor = System.Drawing.Color.White;
+            this.edtEmail.Location = new System.Drawing.Point(71, 49);
+            this.edtEmail.Name = "edtEmail";
+            this.edtEmail.Size = new System.Drawing.Size(356, 23);
+            this.edtEmail.TabIndex = 1;
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -137,12 +156,16 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(872, 7);
+            this.button2.BackColor = System.Drawing.Color.SlateGray;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(9, 7);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
+            this.button2.Size = new System.Drawing.Size(96, 23);
+            this.button2.TabIndex = 3;
             this.button2.Text = "Senden";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // TEditForm
@@ -167,8 +190,8 @@
         private Panel panel1;
         private Label label2;
         private Label label1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox edtSubject;
+        private TextBox edtEmail;
         private Panel panel2;
         private Button button2;
         private Button button1;
