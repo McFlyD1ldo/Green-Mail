@@ -9,7 +9,7 @@ namespace wfGreenMail
 
         public List<Provider> providerList = new()
         {
-            new Provider("smtp.gmail.com", 587, "Gmail"), new Provider("smtp.live.com", 587, "Hotmail")
+            new Provider("smtp.gmail.com", 587, "Gmail"), new Provider("smtp.live.com", 465, "Hotmail"), new Provider("smtp.ethereal.email", 587, "Ethereal")
         };
         public TLoginForm()
         {
@@ -35,8 +35,8 @@ namespace wfGreenMail
                 {
                     TMainForm mainForm = new(mailer);
                     this.Hide();
-                    mainForm.Show();
-                    this.Show();
+                    mainForm.ShowDialog();
+                    this.Close();
                 }
             }
         }
