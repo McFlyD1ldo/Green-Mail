@@ -1,9 +1,11 @@
 ﻿global using clMailer;
+global using Microsoft.Win32.TaskScheduler;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +18,7 @@ namespace wfGreenMail
     {
         Mailer mailer;
         Contact Contact;
+        private List<string> Attachments = new();
         public TEditForm(Mailer mailer)
         {
             this.mailer = mailer;
@@ -35,7 +38,7 @@ namespace wfGreenMail
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                File.WriteAllText(saveFileDialog1.FileName, mstHtmlEditor1.DocumentHTML);
+                File.WriteAllText(saveFileDialog1.FileName, HtmlEditor.DocumentHTML);
             }
         }
 
@@ -43,7 +46,7 @@ namespace wfGreenMail
         {
             try
             {
-                EmailDto dto = new(Mailer.Username, edtEmail.Text, edtSubject.Text, mstHtmlEditor1.DocumentHTML);
+                EmailDto dto = new(Mailer.Username, edtEmail.Text, edtSubject.Text, HtmlEditor.DocumentHTML, Attachments);
                 await Mailer.sendMail(dto);
                 MessageBox.Show("E-Mail sent succesfully");
             }
@@ -52,6 +55,15 @@ namespace wfGreenMail
 
                 MessageBox.Show("There has been an error while trying to send your E-Mail:\n" +
                                 ex.Message);
+            }
+        }
+
+        private void btnAttach_Click(object sender, EventArgs e)
+        {
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Attachments.Add(openFileDialog1.FileName);
+                lblAttachments.Text += openFileDialog1.FileName.Split('\\').Last() + ';';
             }
         }
     }
