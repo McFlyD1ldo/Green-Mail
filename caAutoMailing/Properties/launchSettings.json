@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "caAutoMailing": {
+      "commandName": "Project",
+      "commandLineArgs": "smtp.gmail.com 587 dani.mannsroller@gmail.com vxfbjqocufqcajjq AutoMailTest d:\\C#\\repos\\GreenMail\\slnGreenMail\\test.html"
+    }
+  }
+}
