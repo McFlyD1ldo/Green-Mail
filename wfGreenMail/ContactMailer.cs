@@ -23,10 +23,10 @@ namespace wfGreenMail
 #pragma warning restore CS8600 
             if (recipient != null)
             {
-                if (dto.Body.Contains("<<FNAME>>")) dto.Body = dto.Body.Replace("<<FNAME>>", recipient.FName);
-                if (dto.Body.Contains("<<LNAME>>")) dto.Body = dto.Body.Replace("<<LNAME>>", recipient.LName);
-                if (dto.Body.Contains("<<BDAY>>")) dto.Body = dto.Body.Replace("<<BDAY>>", recipient.Birthday.ToString());
-                if (dto.Body.Contains("<<SIGNEDUP>>")) dto.Body = dto.Body.Replace("<<SIGNEDUP>>", recipient.SignupDate.ToString());    
+                dto.Body = dto.Body.Replace("<<FNAME>>", recipient.FName);
+                dto.Body = dto.Body.Replace("<<LNAME>>", recipient.LName);
+                dto.Body = dto.Body.Replace("<<BDAY>>", recipient.Birthday.ToString());
+                dto.Body = dto.Body.Replace("<<SIGNEDUP>>", recipient.SignupDate.ToString());    
             }
             MimeMessage mail = buildEmail(dto);
             await client.SendAsync(mail);
