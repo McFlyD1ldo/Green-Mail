@@ -21,8 +21,16 @@ namespace wfGreenMail.Data
         [StringLength(50)]
         public string Email { get; set; }
         
+        public bool Newsletter { get; set; }
+        
         public DateTime? Birthday { get; set; }
-        
-        
+
+        public DateTime SignupDate { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Email}";
+        }
+
     }
 }

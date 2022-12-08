@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace wfGreenMail.Data
 {
-    internal class ContactDBContext : DbContext
+    public class ContactDBContext : DbContext
     {
         public DbSet<Contact> Contacts { get; set; }
 
