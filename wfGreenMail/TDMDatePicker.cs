@@ -1,4 +1,5 @@
 ﻿using System.Drawing.Drawing2D;
+using System.Runtime.CompilerServices;
 
 namespace wfGreenMail
 {
@@ -10,8 +11,9 @@ namespace wfGreenMail
         private Color textColor = Color.White;
         private Color borderColor = Color.PaleVioletRed;
         private int borderSize = 0;
+        private bool showIcon = true;
 
-
+        
         //-> Other Values
         private bool droppedDown = false;
         private Icon calendarIcon = Properties.Resources.calendar_white_;
@@ -65,10 +67,20 @@ namespace wfGreenMail
             }
         }
 
+        public bool ShowIcon
+        {
+            get { return showIcon; }
+            set
+            {
+                showIcon = value;
+                this.Invalidate();
+            }
+        }
 
         //Constructor
         public TDMDatePicker()
         {
+            
             this.SetStyle(ControlStyles.UserPaint, true);
             this.MinimumSize = new Size(0, 20);
             this.Font = new Font(this.Font.Name, 9.5F);
@@ -102,7 +114,6 @@ namespace wfGreenMail
                 RectangleF iconArea = new RectangleF(clientArea.Width - calendarIconWidth, 0, calendarIconWidth, clientArea.Height);
                 penBorder.Alignment = PenAlignment.Inset;
                 textFormat.LineAlignment = StringAlignment.Center;
-
                 //Draw surface
                 graphics.FillRectangle(skinBrush, clientArea);
                 //Draw text
@@ -112,8 +123,7 @@ namespace wfGreenMail
                 //Draw border 
                 if (borderSize >= 1) graphics.DrawRectangle(penBorder, clientArea.X, clientArea.Y, clientArea.Width, clientArea.Height);
                 //Draw icon
-                graphics.DrawIcon(calendarIcon, this.Width - calendarIcon.Width - 9, (this.Height - calendarIcon.Height) / 2);
-
+                if (showIcon == true) graphics.DrawIcon(calendarIcon, this.Width - calendarIcon.Width - 9, (this.Height - calendarIcon.Height) / 2);
             }
         }
         protected override void OnHandleCreated(EventArgs e)
