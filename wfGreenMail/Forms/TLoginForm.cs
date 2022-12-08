@@ -9,48 +9,45 @@ namespace wfGreenMail
 
         public List<Provider> providerList = new()
         {
-            new Provider("smtp.gmail.com", 587, "Gmail"), new Provider("smtp.live.com", 465, "Hotmail"), new Provider("smtp.ethereal.email", 587, "Ethereal")
+           new Provider("", 0, ""), new Provider("smtp.gmail.com", 587, "Gmail"), new Provider("smtp.live.com", 465, "Hotmail"), new Provider("smtp.ethereal.email", 587, "Ethereal")
         };
         public TLoginForm()
         {
             InitializeComponent();
-            comboBox1.DataSource = providerList;
-            comboBox1.DisplayMember = "Name";
-            comboBox1.ValueMember = "Host";
-            comboBox1.SelectedIndex = 0;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            cbProvider.DataSource = providerList;
+            cbProvider.DisplayMember = "Name";
+            cbProvider.ValueMember = "Host";
+            cbProvider.SelectedIndex = 0;
+            cbProvider.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Mailer.Username = textBox1.Text;
-            Mailer.Password = textBox2.Text;
+            Mailer.Username = edtUser.Text;
+            Mailer.Password = edtPass.Text;
             if (!mailer.Authenticate())
             {
                 MessageBox.Show("Either your username or password is incorrect");
             }
             else
             {
-                if(MessageBox.Show("Login successful. \n" + " Click ok to continue!", "", MessageBoxButtons.OK) == DialogResult.OK)
-                {
-                    TMainForm mainForm = new(mailer);
-                    this.Hide();
-                    mainForm.ShowDialog();
-                    this.Close();
-                }
+                TMainForm mainForm = new(mailer);
+                this.Hide();
+                mainForm.ShowDialog();
+                this.Close();
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private async void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-                if (!mailer.establishConnection(comboBox1.SelectedValue.ToString(), 587))
-                {
-                    MessageBox.Show("SMTP Connection failed");
-                }
-                else
-                {
-                    MessageBox.Show("SMTP Connection established");
-                };
+            if (!mailer.establishConnection(cbProvider.SelectedValue.ToString(), 587))
+            {
+                MessageBox.Show("SMTP Connection failed");
+            }
+            else
+            {
+                MessageBox.Show("SMTP Connection established");
+            };
         }
 
         //destructor
@@ -58,6 +55,21 @@ namespace wfGreenMail
         {
             Mailer.client.Disconnect(true);
         }
-        
+
+        private void edtPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+            {
+                button1_Click(null, null);
+            }
+        }
+
+        private void edtUser_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+            {
+                edtPass.Focus();
+            }
+        }
     }
 }
