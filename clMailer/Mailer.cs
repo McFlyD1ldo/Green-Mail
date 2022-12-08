@@ -17,12 +17,18 @@ namespace clMailer
 
         public static string Password;
 
+        public static string Host;
+
+        public static int Port;
+
 
 
         public bool establishConnection(string host, int port)
         {
             try
             {
+                Host = host;
+                Port = port;
                 client.Disconnect(true);
                 client.Connect(host, port, SecureSocketOptions.StartTls);
                 return client.IsConnected;
@@ -58,18 +64,19 @@ namespace clMailer
             }
         }
 
-        private static MimeMessage buildEmail(EmailDto dto)
+        protected static MimeMessage buildEmail(EmailDto dto)
         {
             MimeMessage mail = new();
             mail.From.Add(MailboxAddress.Parse(dto.From));
             mail.To.Add(MailboxAddress.Parse(dto.To));
+            mail.Attachments.Concat(dto.Attachments);
             mail.Subject = dto.Subject;
             mail.Sender = MailboxAddress.Parse(Username);
             mail.Body = new TextPart(TextFormat.Html) { Text = dto.Body };
             return mail;
         }
 
-        private static List<MimeMessage> buildMassMail(List<string> adresses, EmailDto dto)
+        protected static List<MimeMessage> buildMassMail(List<string> adresses, EmailDto dto)
         {
             List<MimeMessage> mails = new();
             foreach (var item in adresses)
@@ -79,6 +86,7 @@ namespace clMailer
                 mail.Subject = dto.Subject;
                 mail.Sender = MailboxAddress.Parse(Username);
                 mail.Body = new TextPart(TextFormat.Html) { Text = dto.Body };
+                mail.Attachments.Concat(dto.Attachments);
                 mails.Add(mail);
             }
             return mails;
@@ -95,12 +103,14 @@ namespace clMailer
             await client.SendAsync(mail);
         }
 
+        
+
         public static async Task sendMassMail(List<string> adresses, EmailDto dto)
         {
             List<MimeMessage> mails = buildMassMail(adresses, dto);
             foreach (var item in mails)
             {
-                await client.SendAsync(item);
+                await sendMail(item);
             }
         }
     }
