@@ -151,7 +151,7 @@ namespace wfGreenMail.Forms
                     DaysOfWeek = getDaysOfWeek()
 
                 };
-                if (checkBox1.Checked) trigger.EndBoundary = dpExpireDate.Value.Date + TimeSpan.FromHours(dpExpireTime.Value.Hour) + TimeSpan.FromMinutes(dpExpireTime.Value.Minute);
+                if (cbExp.Checked) trigger.EndBoundary = dpExpireDate.Value.Date + TimeSpan.FromHours(dpExpireTime.Value.Hour) + TimeSpan.FromMinutes(dpExpireTime.Value.Minute);
                 td.Triggers.Add(trigger);
                 string[] args = new string[6];
                 args[0] = Mailer.Host;
@@ -179,7 +179,7 @@ namespace wfGreenMail.Forms
                     DaysOfWeek = getDaysOfWeek()
 
                 };
-                if (checkBox1.Checked) trigger.EndBoundary = dpExpireDate.Value.Date + TimeSpan.FromHours(dpExpireTime.Value.Hour) + TimeSpan.FromMinutes(dpExpireTime.Value.Minute);
+                if (cbExp.Checked) trigger.EndBoundary = dpExpireDate.Value.Date + TimeSpan.FromHours(dpExpireTime.Value.Hour) + TimeSpan.FromMinutes(dpExpireTime.Value.Minute);
                 td.Triggers.Add(trigger);
                 string[] args = new string[6];
                 args[0] = Mailer.Host;
@@ -204,7 +204,7 @@ namespace wfGreenMail.Forms
                 {
                     StartBoundary = dpStartDate.Value.Date + TimeSpan.FromHours(dpStartTime.Value.Hour) + TimeSpan.FromMinutes(dpStartTime.Value.Minute),
                 };
-                if (checkBox1.Checked) trigger.EndBoundary = dpExpireDate.Value.Date + TimeSpan.FromHours(dpExpireTime.Value.Hour) + TimeSpan.FromMinutes(dpExpireTime.Value.Minute);
+                if (cbExp.Checked) trigger.EndBoundary = dpExpireDate.Value.Date + TimeSpan.FromHours(dpExpireTime.Value.Hour) + TimeSpan.FromMinutes(dpExpireTime.Value.Minute);
                 td.Triggers.Add(trigger);
                 string[] args = new string[6];
                 args[0] = Mailer.Host;
@@ -229,7 +229,7 @@ namespace wfGreenMail.Forms
                 {
                     StartBoundary = dpStartDate.Value.Date + TimeSpan.FromHours(dpStartTime.Value.Hour) + TimeSpan.FromMinutes(dpStartTime.Value.Minute),
                 };
-                if (checkBox1.Checked) trigger.EndBoundary = dpExpireDate.Value.Date + TimeSpan.FromHours(dpExpireTime.Value.Hour) + TimeSpan.FromMinutes(dpExpireTime.Value.Minute);
+                if (cbExp.Checked) trigger.EndBoundary = dpExpireDate.Value.Date + TimeSpan.FromHours(dpExpireTime.Value.Hour) + TimeSpan.FromMinutes(dpExpireTime.Value.Minute);
                 td.Triggers.Add(trigger);
                 string[] args = new string[6];
                 args[0] = Mailer.Host;

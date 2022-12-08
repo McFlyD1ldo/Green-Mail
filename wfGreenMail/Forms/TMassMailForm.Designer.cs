@@ -28,44 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlTitle = new System.Windows.Forms.Panel();
             this.lblMessage = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.pnlTop = new System.Windows.Forms.Panel();
             this.lblAttachments = new System.Windows.Forms.Label();
             this.btnAttach = new System.Windows.Forms.Button();
             this.lblAttach = new System.Windows.Forms.Label();
             this.edtSubj = new System.Windows.Forms.TextBox();
             this.lblSubj = new System.Windows.Forms.Label();
             this.htmlMessage = new BaiqiSoft.HtmlEditorControl.MstHtmlEditor();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnlSplit = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbContacts = new System.Windows.Forms.ListBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlBottom = new System.Windows.Forms.Panel();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnContacts = new System.Windows.Forms.Button();
             this.btnMessage = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.panel1.SuspendLayout();
+            this.pnlTitle.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.pnlTop.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnlBottom.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlTitle
             // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.lblMessage);
-            this.panel1.Controls.Add(this.lblTitle);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(875, 79);
-            this.panel1.TabIndex = 0;
+            this.pnlTitle.BackColor = System.Drawing.Color.Black;
+            this.pnlTitle.Controls.Add(this.lblMessage);
+            this.pnlTitle.Controls.Add(this.lblTitle);
+            this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitle.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitle.Name = "pnlTitle";
+            this.pnlTitle.Size = new System.Drawing.Size(875, 79);
+            this.pnlTitle.TabIndex = 0;
             // 
             // lblMessage
             // 
@@ -92,9 +92,9 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Controls.Add(this.pnlSplit);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.pnlBottom);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 79);
             this.panel2.Name = "panel2";
@@ -103,7 +103,7 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Controls.Add(this.pnlTop);
             this.panel6.Controls.Add(this.htmlMessage);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(270, 0);
@@ -111,19 +111,19 @@
             this.panel6.Size = new System.Drawing.Size(605, 487);
             this.panel6.TabIndex = 8;
             // 
-            // panel7
+            // pnlTop
             // 
-            this.panel7.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel7.Controls.Add(this.lblAttachments);
-            this.panel7.Controls.Add(this.btnAttach);
-            this.panel7.Controls.Add(this.lblAttach);
-            this.panel7.Controls.Add(this.edtSubj);
-            this.panel7.Controls.Add(this.lblSubj);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(605, 68);
-            this.panel7.TabIndex = 5;
+            this.pnlTop.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pnlTop.Controls.Add(this.lblAttachments);
+            this.pnlTop.Controls.Add(this.btnAttach);
+            this.pnlTop.Controls.Add(this.lblAttach);
+            this.pnlTop.Controls.Add(this.edtSubj);
+            this.pnlTop.Controls.Add(this.lblSubj);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(605, 68);
+            this.pnlTop.TabIndex = 5;
             // 
             // lblAttachments
             // 
@@ -192,14 +192,14 @@
             this.htmlMessage.Size = new System.Drawing.Size(605, 487);
             this.htmlMessage.TabIndex = 4;
             // 
-            // panel5
+            // pnlSplit
             // 
-            this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(260, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 487);
-            this.panel5.TabIndex = 7;
+            this.pnlSplit.BackColor = System.Drawing.Color.Black;
+            this.pnlSplit.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlSplit.Location = new System.Drawing.Point(260, 0);
+            this.pnlSplit.Name = "pnlSplit";
+            this.pnlSplit.Size = new System.Drawing.Size(10, 487);
+            this.pnlSplit.TabIndex = 7;
             // 
             // panel4
             // 
@@ -222,16 +222,16 @@
             this.lbContacts.Size = new System.Drawing.Size(260, 487);
             this.lbContacts.TabIndex = 0;
             // 
-            // panel3
+            // pnlBottom
             // 
-            this.panel3.Controls.Add(this.btnSend);
-            this.panel3.Controls.Add(this.btnContacts);
-            this.panel3.Controls.Add(this.btnMessage);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 487);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(875, 78);
-            this.panel3.TabIndex = 5;
+            this.pnlBottom.Controls.Add(this.btnSend);
+            this.pnlBottom.Controls.Add(this.btnContacts);
+            this.pnlBottom.Controls.Add(this.btnMessage);
+            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBottom.Location = new System.Drawing.Point(0, 487);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Size = new System.Drawing.Size(875, 78);
+            this.pnlBottom.TabIndex = 5;
             // 
             // btnSend
             // 
@@ -287,39 +287,39 @@
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(875, 644);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlTitle);
             this.Name = "TMassMailForm";
             this.Text = "TMassMailForm";
             this.Resize += new System.EventHandler(this.TMassMailForm_Resize);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlTitle.ResumeLayout(false);
+            this.pnlTitle.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.pnlBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Panel panel1;
+        private Panel pnlTitle;
         private Label lblTitle;
         private Panel panel2;
         private Button btnMessage;
         private Button btnContacts;
         private OpenFileDialog openFileDialog;
-        private Panel panel5;
+        private Panel pnlSplit;
         private Panel panel4;
-        private Panel panel3;
+        private Panel pnlBottom;
         private BaiqiSoft.HtmlEditorControl.MstHtmlEditor htmlMessage;
         private Label lblMessage;
         private ListBox lbContacts;
         private Panel panel6;
         private Button btnSend;
-        private Panel panel7;
+        private Panel pnlTop;
         private TextBox edtSubj;
         private Label lblSubj;
         private Label lblAttach;

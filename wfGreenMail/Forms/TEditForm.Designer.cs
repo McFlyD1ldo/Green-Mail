@@ -28,51 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlMain = new System.Windows.Forms.TableLayoutPanel();
             this.HtmlEditor = new BaiqiSoft.HtmlEditorControl.MstHtmlEditor();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.lblAttachments = new System.Windows.Forms.Label();
             this.lblAttach = new System.Windows.Forms.Label();
             this.btnAttach = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTo = new System.Windows.Forms.Label();
+            this.lblSubj = new System.Windows.Forms.Label();
             this.edtSubject = new System.Windows.Forms.TextBox();
             this.edtEmail = new System.Windows.Forms.TextBox();
-            this.pnlMain = new System.Windows.Forms.Panel();
+            this.pnlBottom = new System.Windows.Forms.Panel();
             this.btnSend = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.pnlTop.SuspendLayout();
             this.pnlMain.SuspendLayout();
+            this.pnlTop.SuspendLayout();
+            this.pnlBottom.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // pnlMain
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.HtmlEditor, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.pnlTop, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pnlMain, 0, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.17355F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.82645F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(978, 644);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.pnlMain.ColumnCount = 1;
+            this.pnlMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.pnlMain.Controls.Add(this.HtmlEditor, 0, 1);
+            this.pnlMain.Controls.Add(this.pnlTop, 0, 0);
+            this.pnlMain.Controls.Add(this.pnlBottom, 0, 2);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(0, 0);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.RowCount = 3;
+            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.17355F));
+            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.82645F));
+            this.pnlMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.pnlMain.Size = new System.Drawing.Size(978, 644);
+            this.pnlMain.TabIndex = 0;
             // 
             // HtmlEditor
             // 
             this.HtmlEditor.DataSource = null;
             this.HtmlEditor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.HtmlEditor.LanguageConfig = null;
-            this.HtmlEditor.Location = new System.Drawing.Point(3, 119);
+            this.HtmlEditor.Location = new System.Drawing.Point(3, 117);
             this.HtmlEditor.Name = "HtmlEditor";
             this.HtmlEditor.ShowEditorModeToolbar = false;
-            this.HtmlEditor.Size = new System.Drawing.Size(972, 483);
+            this.HtmlEditor.Size = new System.Drawing.Size(972, 478);
             this.HtmlEditor.TabIndex = 2;
             // 
             // pnlTop
@@ -81,14 +81,14 @@
             this.pnlTop.Controls.Add(this.lblAttachments);
             this.pnlTop.Controls.Add(this.lblAttach);
             this.pnlTop.Controls.Add(this.btnAttach);
-            this.pnlTop.Controls.Add(this.label2);
-            this.pnlTop.Controls.Add(this.label1);
+            this.pnlTop.Controls.Add(this.lblTo);
+            this.pnlTop.Controls.Add(this.lblSubj);
             this.pnlTop.Controls.Add(this.edtSubject);
             this.pnlTop.Controls.Add(this.edtEmail);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTop.Location = new System.Drawing.Point(3, 3);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(972, 110);
+            this.pnlTop.Size = new System.Drawing.Size(972, 108);
             this.pnlTop.TabIndex = 1;
             // 
             // lblAttachments
@@ -124,25 +124,25 @@
             this.btnAttach.UseVisualStyleBackColor = true;
             this.btnAttach.Click += new System.EventHandler(this.btnAttach_Click);
             // 
-            // label2
+            // lblTo
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Recipient:";
+            this.lblTo.AutoSize = true;
+            this.lblTo.ForeColor = System.Drawing.Color.White;
+            this.lblTo.Location = new System.Drawing.Point(3, 57);
+            this.lblTo.Name = "lblTo";
+            this.lblTo.Size = new System.Drawing.Size(59, 15);
+            this.lblTo.TabIndex = 3;
+            this.lblTo.Text = "Recipient:";
             // 
-            // label1
+            // lblSubj
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Subject:";
+            this.lblSubj.AutoSize = true;
+            this.lblSubj.ForeColor = System.Drawing.Color.White;
+            this.lblSubj.Location = new System.Drawing.Point(3, 28);
+            this.lblSubj.Name = "lblSubj";
+            this.lblSubj.Size = new System.Drawing.Size(49, 15);
+            this.lblSubj.TabIndex = 2;
+            this.lblSubj.Text = "Subject:";
             // 
             // edtSubject
             // 
@@ -162,15 +162,15 @@
             this.edtEmail.Size = new System.Drawing.Size(356, 23);
             this.edtEmail.TabIndex = 1;
             // 
-            // pnlMain
+            // pnlBottom
             // 
-            this.pnlMain.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.pnlMain.Controls.Add(this.btnSend);
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(3, 608);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(972, 33);
-            this.pnlMain.TabIndex = 2;
+            this.pnlBottom.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pnlBottom.Controls.Add(this.btnSend);
+            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBottom.Location = new System.Drawing.Point(3, 601);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Size = new System.Drawing.Size(972, 40);
+            this.pnlBottom.TabIndex = 2;
             // 
             // btnSend
             // 
@@ -195,26 +195,26 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 644);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.pnlMain);
             this.Name = "TEditForm";
             this.Text = "TEditForm";
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.pnlMain.ResumeLayout(false);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
-            this.pnlMain.ResumeLayout(false);
+            this.pnlBottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel pnlMain;
         private BaiqiSoft.HtmlEditorControl.MstHtmlEditor HtmlEditor;
         private Panel pnlTop;
-        private Label label2;
-        private Label label1;
+        private Label lblTo;
+        private Label lblSubj;
         private TextBox edtSubject;
         private TextBox edtEmail;
-        private Panel pnlMain;
+        private Panel pnlBottom;
         private Button btnSend;
         private SaveFileDialog saveFileDialog1;
         private Label lblAttach;

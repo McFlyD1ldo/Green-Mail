@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.panel1 = new System.Windows.Forms.Panel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.pnlSplit = new System.Windows.Forms.SplitContainer();
+            this.pnlTitle = new System.Windows.Forms.Panel();
             this.lblMenu = new System.Windows.Forms.Label();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
-            this.writingtoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eMailAutomationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.massmailingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miWrite = new System.Windows.Forms.ToolStripMenuItem();
+            this.miAuto = new System.Windows.Forms.ToolStripMenuItem();
+            this.miMassMail = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.grdContacts = new System.Windows.Forms.DataGridView();
             this.pnlBottom = new System.Windows.Forms.Panel();
@@ -56,11 +56,11 @@
             this.lblFName = new System.Windows.Forms.Label();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.lblAdd = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlSplit)).BeginInit();
+            this.pnlSplit.Panel1.SuspendLayout();
+            this.pnlSplit.Panel2.SuspendLayout();
+            this.pnlSplit.SuspendLayout();
+            this.pnlTitle.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdContacts)).BeginInit();
@@ -69,38 +69,38 @@
             this.pnlTop.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // pnlSplit
             // 
-            this.splitContainer1.BackColor = System.Drawing.Color.Black;
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
+            this.pnlSplit.BackColor = System.Drawing.Color.Black;
+            this.pnlSplit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlSplit.Location = new System.Drawing.Point(0, 0);
+            this.pnlSplit.Name = "pnlSplit";
             // 
-            // splitContainer1.Panel1
+            // pnlSplit.Panel1
             // 
-            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.splitContainer1.Panel1.Controls.Add(this.panel1);
-            this.splitContainer1.Panel1.Controls.Add(this.MainMenu);
+            this.pnlSplit.Panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pnlSplit.Panel1.Controls.Add(this.pnlTitle);
+            this.pnlSplit.Panel1.Controls.Add(this.MainMenu);
             // 
-            // splitContainer1.Panel2
+            // pnlSplit.Panel2
             // 
-            this.splitContainer1.Panel2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.splitContainer1.Panel2.Controls.Add(this.pnlMain);
-            this.splitContainer1.Panel2.Controls.Add(this.pnlBottom);
-            this.splitContainer1.Panel2.Controls.Add(this.pnlInput);
-            this.splitContainer1.Size = new System.Drawing.Size(920, 554);
-            this.splitContainer1.SplitterDistance = 165;
-            this.splitContainer1.TabIndex = 0;
+            this.pnlSplit.Panel2.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pnlSplit.Panel2.Controls.Add(this.pnlMain);
+            this.pnlSplit.Panel2.Controls.Add(this.pnlBottom);
+            this.pnlSplit.Panel2.Controls.Add(this.pnlInput);
+            this.pnlSplit.Size = new System.Drawing.Size(920, 554);
+            this.pnlSplit.SplitterDistance = 165;
+            this.pnlSplit.TabIndex = 0;
             // 
-            // panel1
+            // pnlTitle
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Controls.Add(this.lblMenu);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(165, 61);
-            this.panel1.TabIndex = 3;
+            this.pnlTitle.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pnlTitle.Controls.Add(this.lblMenu);
+            this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitle.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitle.Name = "pnlTitle";
+            this.pnlTitle.Size = new System.Drawing.Size(165, 61);
+            this.pnlTitle.TabIndex = 3;
             // 
             // lblMenu
             // 
@@ -119,39 +119,39 @@
             this.MainMenu.BackColor = System.Drawing.Color.DarkSlateGray;
             this.MainMenu.Dock = System.Windows.Forms.DockStyle.None;
             this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.writingtoolStripMenuItem,
-            this.eMailAutomationToolStripMenuItem,
-            this.massmailingToolStripMenuItem});
+            this.miWrite,
+            this.miAuto,
+            this.miMassMail});
             this.MainMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.MainMenu.Location = new System.Drawing.Point(0, 60);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(124, 63);
+            this.MainMenu.Size = new System.Drawing.Size(126, 82);
             this.MainMenu.TabIndex = 1;
             this.MainMenu.Text = "menuStrip1";
             // 
-            // writingtoolStripMenuItem
+            // miWrite
             // 
-            this.writingtoolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.writingtoolStripMenuItem.Name = "writingtoolStripMenuItem";
-            this.writingtoolStripMenuItem.Size = new System.Drawing.Size(117, 19);
-            this.writingtoolStripMenuItem.Text = "New E-Mail";
-            this.writingtoolStripMenuItem.Click += new System.EventHandler(this.writingtoolStripMenuItem_Click);
+            this.miWrite.ForeColor = System.Drawing.Color.White;
+            this.miWrite.Name = "miWrite";
+            this.miWrite.Size = new System.Drawing.Size(119, 19);
+            this.miWrite.Text = "New E-Mail";
+            this.miWrite.Click += new System.EventHandler(this.writingtoolStripMenuItem_Click);
             // 
-            // eMailAutomationToolStripMenuItem
+            // miAuto
             // 
-            this.eMailAutomationToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.eMailAutomationToolStripMenuItem.Name = "eMailAutomationToolStripMenuItem";
-            this.eMailAutomationToolStripMenuItem.Size = new System.Drawing.Size(117, 19);
-            this.eMailAutomationToolStripMenuItem.Text = "E-Mail automation";
-            this.eMailAutomationToolStripMenuItem.Click += new System.EventHandler(this.eMailAutomationToolStripMenuItem_Click);
+            this.miAuto.ForeColor = System.Drawing.Color.White;
+            this.miAuto.Name = "miAuto";
+            this.miAuto.Size = new System.Drawing.Size(119, 19);
+            this.miAuto.Text = "E-Mail automation";
+            this.miAuto.Click += new System.EventHandler(this.eMailAutomationToolStripMenuItem_Click);
             // 
-            // massmailingToolStripMenuItem
+            // miMassMail
             // 
-            this.massmailingToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.massmailingToolStripMenuItem.Name = "massmailingToolStripMenuItem";
-            this.massmailingToolStripMenuItem.Size = new System.Drawing.Size(117, 19);
-            this.massmailingToolStripMenuItem.Text = "Massmailing";
-            this.massmailingToolStripMenuItem.Click += new System.EventHandler(this.massmailingToolStripMenuItem_Click);
+            this.miMassMail.ForeColor = System.Drawing.Color.White;
+            this.miMassMail.Name = "miMassMail";
+            this.miMassMail.Size = new System.Drawing.Size(119, 19);
+            this.miMassMail.Text = "Massmailing";
+            this.miMassMail.Click += new System.EventHandler(this.massmailingToolStripMenuItem_Click);
             // 
             // pnlMain
             // 
@@ -167,44 +167,44 @@
             this.grdContacts.AllowUserToAddRows = false;
             this.grdContacts.AllowUserToDeleteRows = false;
             this.grdContacts.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            this.grdContacts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            this.grdContacts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.grdContacts.BackgroundColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdContacts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdContacts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.grdContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdContacts.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdContacts.DefaultCellStyle = dataGridViewCellStyle8;
             this.grdContacts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdContacts.EnableHeadersVisualStyles = false;
             this.grdContacts.GridColor = System.Drawing.Color.SlateGray;
             this.grdContacts.Location = new System.Drawing.Point(0, 0);
             this.grdContacts.Name = "grdContacts";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdContacts.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdContacts.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.grdContacts.RowHeadersVisible = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SlateGray;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            this.grdContacts.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            this.grdContacts.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.grdContacts.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.SlateGray;
             this.grdContacts.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
             this.grdContacts.RowTemplate.Height = 25;
@@ -374,18 +374,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 554);
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.pnlSplit);
             this.MainMenuStrip = this.MainMenu;
             this.Name = "TMainForm";
             this.Text = "Green Mail";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TMainForm_FormClosing);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlSplit.Panel1.ResumeLayout(false);
+            this.pnlSplit.Panel1.PerformLayout();
+            this.pnlSplit.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pnlSplit)).EndInit();
+            this.pnlSplit.ResumeLayout(false);
+            this.pnlTitle.ResumeLayout(false);
+            this.pnlTitle.PerformLayout();
             this.MainMenu.ResumeLayout(false);
             this.MainMenu.PerformLayout();
             this.pnlMain.ResumeLayout(false);
@@ -401,13 +401,13 @@
 
         #endregion
 
-        private SplitContainer splitContainer1;
-        private Panel panel1;
+        private SplitContainer pnlSplit;
+        private Panel pnlTitle;
         private Label lblMenu;
         private MenuStrip MainMenu;
-        private ToolStripMenuItem writingtoolStripMenuItem;
-        private ToolStripMenuItem eMailAutomationToolStripMenuItem;
-        private ToolStripMenuItem massmailingToolStripMenuItem;
+        private ToolStripMenuItem miWrite;
+        private ToolStripMenuItem miAuto;
+        private ToolStripMenuItem miMassMail;
         private DataGridView grdContacts;
         private Panel pnlMain;
         private Panel pnlInput;

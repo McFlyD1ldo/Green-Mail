@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pnlTitle = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.pnlBottom = new System.Windows.Forms.Panel();
             this.lblAttachments = new System.Windows.Forms.Label();
             this.btnAttach = new System.Windows.Forms.Button();
             this.lblAttach = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblSubj = new System.Windows.Forms.Label();
             this.edtSubj = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnBody = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.cbExp = new System.Windows.Forms.CheckBox();
             this.dpExpireDate = new wfGreenMail.TDMDatePicker();
             this.dpExpireTime = new wfGreenMail.TDMDatePicker();
             this.lblSpan = new System.Windows.Forms.Label();
@@ -49,49 +49,49 @@
             this.edtRepeat = new System.Windows.Forms.TextBox();
             this.clbWeeksOfMonth = new System.Windows.Forms.CheckedListBox();
             this.clbMonths = new System.Windows.Forms.CheckedListBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.pnlTop = new System.Windows.Forms.Panel();
+            this.lblSettings = new System.Windows.Forms.Label();
             this.lblStart = new System.Windows.Forms.Label();
             this.dpStartDate = new wfGreenMail.TDMDatePicker();
             this.dpStartTime = new wfGreenMail.TDMDatePicker();
             this.clbDays = new System.Windows.Forms.CheckedListBox();
             this.lblMonths = new System.Windows.Forms.Label();
             this.lblDays = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.rgFreq = new System.Windows.Forms.Panel();
             this.rbMonthly = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblFrequency = new System.Windows.Forms.Label();
             this.rbOnce = new System.Windows.Forms.RadioButton();
             this.rbWeekly = new System.Windows.Forms.RadioButton();
             this.rbDaily = new System.Windows.Forms.RadioButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.panel1.SuspendLayout();
+            this.pnlTitle.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.pnlMain.SuspendLayout();
+            this.pnlBottom.SuspendLayout();
+            this.pnlTop.SuspendLayout();
+            this.rgFreq.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(5, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 37);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Add auto email";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTitle.Location = new System.Drawing.Point(5, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(199, 37);
+            this.lblTitle.TabIndex = 3;
+            this.lblTitle.Text = "Add auto email";
             // 
-            // panel1
+            // pnlTitle
             // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1022, 52);
-            this.panel1.TabIndex = 4;
+            this.pnlTitle.BackColor = System.Drawing.Color.Black;
+            this.pnlTitle.Controls.Add(this.lblTitle);
+            this.pnlTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitle.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitle.Name = "pnlTitle";
+            this.pnlTitle.Size = new System.Drawing.Size(1022, 52);
+            this.pnlTitle.TabIndex = 4;
             // 
             // panel2
             // 
@@ -104,51 +104,51 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.pnlMain);
+            this.panel3.Controls.Add(this.rgFreq);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1022, 391);
             this.panel3.TabIndex = 13;
             // 
-            // panel5
+            // pnlMain
             // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel5.Controls.Add(this.panel7);
-            this.panel5.Controls.Add(this.lblSpan);
-            this.panel5.Controls.Add(this.lblRepeat);
-            this.panel5.Controls.Add(this.edtRepeat);
-            this.panel5.Controls.Add(this.clbWeeksOfMonth);
-            this.panel5.Controls.Add(this.clbMonths);
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.clbDays);
-            this.panel5.Controls.Add(this.lblMonths);
-            this.panel5.Controls.Add(this.lblDays);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(134, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(888, 391);
-            this.panel5.TabIndex = 14;
+            this.pnlMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlMain.Controls.Add(this.pnlBottom);
+            this.pnlMain.Controls.Add(this.lblSpan);
+            this.pnlMain.Controls.Add(this.lblRepeat);
+            this.pnlMain.Controls.Add(this.edtRepeat);
+            this.pnlMain.Controls.Add(this.clbWeeksOfMonth);
+            this.pnlMain.Controls.Add(this.clbMonths);
+            this.pnlMain.Controls.Add(this.pnlTop);
+            this.pnlMain.Controls.Add(this.clbDays);
+            this.pnlMain.Controls.Add(this.lblMonths);
+            this.pnlMain.Controls.Add(this.lblDays);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(134, 0);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(888, 391);
+            this.pnlMain.TabIndex = 14;
             // 
-            // panel7
+            // pnlBottom
             // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel7.Controls.Add(this.lblAttachments);
-            this.panel7.Controls.Add(this.btnAttach);
-            this.panel7.Controls.Add(this.lblAttach);
-            this.panel7.Controls.Add(this.label3);
-            this.panel7.Controls.Add(this.edtSubj);
-            this.panel7.Controls.Add(this.button2);
-            this.panel7.Controls.Add(this.button1);
-            this.panel7.Controls.Add(this.checkBox1);
-            this.panel7.Controls.Add(this.dpExpireDate);
-            this.panel7.Controls.Add(this.dpExpireTime);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 307);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(884, 80);
-            this.panel7.TabIndex = 28;
+            this.pnlBottom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlBottom.Controls.Add(this.lblAttachments);
+            this.pnlBottom.Controls.Add(this.btnAttach);
+            this.pnlBottom.Controls.Add(this.lblAttach);
+            this.pnlBottom.Controls.Add(this.lblSubj);
+            this.pnlBottom.Controls.Add(this.edtSubj);
+            this.pnlBottom.Controls.Add(this.btnBody);
+            this.pnlBottom.Controls.Add(this.btnAdd);
+            this.pnlBottom.Controls.Add(this.cbExp);
+            this.pnlBottom.Controls.Add(this.dpExpireDate);
+            this.pnlBottom.Controls.Add(this.dpExpireTime);
+            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBottom.Location = new System.Drawing.Point(0, 307);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Size = new System.Drawing.Size(884, 80);
+            this.pnlBottom.TabIndex = 28;
             // 
             // lblAttachments
             // 
@@ -182,14 +182,14 @@
             this.lblAttach.TabIndex = 33;
             this.lblAttach.Text = "Attachments:";
             // 
-            // label3
+            // lblSubj
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 15);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Subject:";
+            this.lblSubj.AutoSize = true;
+            this.lblSubj.Location = new System.Drawing.Point(21, 52);
+            this.lblSubj.Name = "lblSubj";
+            this.lblSubj.Size = new System.Drawing.Size(49, 15);
+            this.lblSubj.TabIndex = 32;
+            this.lblSubj.Text = "Subject:";
             // 
             // edtSubj
             // 
@@ -202,37 +202,37 @@
             this.edtSubj.Size = new System.Drawing.Size(225, 24);
             this.edtSubj.TabIndex = 31;
             // 
-            // button2
+            // btnBody
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(325, 45);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 23);
-            this.button2.TabIndex = 30;
-            this.button2.Text = "E-Mail";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnBody.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBody.Location = new System.Drawing.Point(325, 45);
+            this.btnBody.Name = "btnBody";
+            this.btnBody.Size = new System.Drawing.Size(88, 23);
+            this.btnBody.TabIndex = 30;
+            this.btnBody.Text = "E-Mail";
+            this.btnBody.UseVisualStyleBackColor = true;
+            this.btnBody.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(787, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Location = new System.Drawing.Point(787, 12);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 29;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.button1_Click);
             // 
-            // checkBox1
+            // cbExp
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(14, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(61, 19);
-            this.checkBox1.TabIndex = 14;
-            this.checkBox1.Text = "expire:";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbExp.AutoSize = true;
+            this.cbExp.Location = new System.Drawing.Point(14, 19);
+            this.cbExp.Name = "cbExp";
+            this.cbExp.Size = new System.Drawing.Size(61, 19);
+            this.cbExp.TabIndex = 14;
+            this.cbExp.Text = "expire:";
+            this.cbExp.UseVisualStyleBackColor = true;
             // 
             // dpExpireDate
             // 
@@ -331,28 +331,28 @@
             this.clbMonths.TabIndex = 22;
             this.clbMonths.Visible = false;
             // 
-            // panel6
+            // pnlTop
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel6.Controls.Add(this.label5);
-            this.panel6.Controls.Add(this.lblStart);
-            this.panel6.Controls.Add(this.dpStartDate);
-            this.panel6.Controls.Add(this.dpStartTime);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(884, 76);
-            this.panel6.TabIndex = 21;
+            this.pnlTop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlTop.Controls.Add(this.lblSettings);
+            this.pnlTop.Controls.Add(this.lblStart);
+            this.pnlTop.Controls.Add(this.dpStartDate);
+            this.pnlTop.Controls.Add(this.dpStartTime);
+            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Name = "pnlTop";
+            this.pnlTop.Size = new System.Drawing.Size(884, 76);
+            this.pnlTop.TabIndex = 21;
             // 
-            // label5
+            // lblSettings
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(4, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 20);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Settings";
+            this.lblSettings.AutoSize = true;
+            this.lblSettings.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSettings.Location = new System.Drawing.Point(4, 9);
+            this.lblSettings.Name = "lblSettings";
+            this.lblSettings.Size = new System.Drawing.Size(66, 20);
+            this.lblSettings.TabIndex = 12;
+            this.lblSettings.Text = "Settings";
             // 
             // lblStart
             // 
@@ -432,19 +432,19 @@
             this.lblDays.Text = "Days:";
             this.lblDays.Visible = false;
             // 
-            // panel4
+            // rgFreq
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.rbMonthly);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.rbOnce);
-            this.panel4.Controls.Add(this.rbWeekly);
-            this.panel4.Controls.Add(this.rbDaily);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(134, 391);
-            this.panel4.TabIndex = 13;
+            this.rgFreq.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.rgFreq.Controls.Add(this.rbMonthly);
+            this.rgFreq.Controls.Add(this.lblFrequency);
+            this.rgFreq.Controls.Add(this.rbOnce);
+            this.rgFreq.Controls.Add(this.rbWeekly);
+            this.rgFreq.Controls.Add(this.rbDaily);
+            this.rgFreq.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rgFreq.Location = new System.Drawing.Point(0, 0);
+            this.rgFreq.Name = "rgFreq";
+            this.rgFreq.Size = new System.Drawing.Size(134, 391);
+            this.rgFreq.TabIndex = 13;
             // 
             // rbMonthly
             // 
@@ -457,15 +457,15 @@
             this.rbMonthly.UseVisualStyleBackColor = true;
             this.rbMonthly.CheckedChanged += new System.EventHandler(this.rbMonthly_CheckedChanged);
             // 
-            // label2
+            // lblFrequency
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(3, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 20);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Frequency";
+            this.lblFrequency.AutoSize = true;
+            this.lblFrequency.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblFrequency.Location = new System.Drawing.Point(3, 9);
+            this.lblFrequency.Name = "lblFrequency";
+            this.lblFrequency.Size = new System.Drawing.Size(81, 20);
+            this.lblFrequency.TabIndex = 7;
+            this.lblFrequency.Text = "Frequency";
             // 
             // rbOnce
             // 
@@ -513,60 +513,60 @@
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1022, 443);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlTitle);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "TAutomizeForm";
             this.Text = "Automization";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlTitle.ResumeLayout(false);
+            this.pnlTitle.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.pnlMain.ResumeLayout(false);
+            this.pnlMain.PerformLayout();
+            this.pnlBottom.ResumeLayout(false);
+            this.pnlBottom.PerformLayout();
+            this.pnlTop.ResumeLayout(false);
+            this.pnlTop.PerformLayout();
+            this.rgFreq.ResumeLayout(false);
+            this.rgFreq.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Label label1;
-        private Panel panel1;
+        private Label lblTitle;
+        private Panel pnlTitle;
         private Panel panel2;
         private Label lblMonths;
         private Label lblDays;
-        private Label label2;
+        private Label lblFrequency;
         private RadioButton rbMonthly;
         private RadioButton rbWeekly;
         private RadioButton rbDaily;
         private RadioButton rbOnce;
         private Panel panel3;
-        private Panel panel4;
-        private Panel panel5;
+        private Panel rgFreq;
+        private Panel pnlMain;
         private CheckedListBox clbDays;
         private TDMDatePicker dpExpireTime;
         private TDMDatePicker dpExpireDate;
-        private CheckBox checkBox1;
-        private Label label5;
+        private CheckBox cbExp;
+        private Label lblSettings;
         private Label lblStart;
         private TDMDatePicker dpStartTime;
         private TDMDatePicker dpStartDate;
         private CheckedListBox clbMonths;
-        private Panel panel6;
+        private Panel pnlTop;
         private Label lblSpan;
         private Label lblRepeat;
         private TextBox edtRepeat;
         private CheckedListBox clbWeeksOfMonth;
-        private Panel panel7;
+        private Panel pnlBottom;
         private TextBox edtSubj;
-        private Button button2;
-        private Button button1;
+        private Button btnBody;
+        private Button btnAdd;
         private OpenFileDialog openFileDialog1;
-        private Label label3;
+        private Label lblSubj;
         private Label lblAttach;
         private Label lblAttachments;
         private Button btnAttach;
