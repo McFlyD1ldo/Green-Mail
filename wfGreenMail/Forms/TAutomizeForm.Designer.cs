@@ -316,6 +316,7 @@
             "January",
             "February",
             "March",
+            "April",
             "May",
             "June",
             "July",
@@ -327,7 +328,7 @@
             this.clbMonths.Location = new System.Drawing.Point(60, 191);
             this.clbMonths.MultiColumn = true;
             this.clbMonths.Name = "clbMonths";
-            this.clbMonths.Size = new System.Drawing.Size(345, 94);
+            this.clbMonths.Size = new System.Drawing.Size(397, 94);
             this.clbMonths.TabIndex = 22;
             this.clbMonths.Visible = false;
             // 
@@ -408,7 +409,7 @@
             this.clbDays.Location = new System.Drawing.Point(163, 82);
             this.clbDays.MultiColumn = true;
             this.clbDays.Name = "clbDays";
-            this.clbDays.Size = new System.Drawing.Size(242, 94);
+            this.clbDays.Size = new System.Drawing.Size(294, 94);
             this.clbDays.TabIndex = 17;
             this.clbDays.Visible = false;
             // 

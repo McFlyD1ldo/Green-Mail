@@ -5,7 +5,7 @@ namespace wfGreenMail
 {
     public partial class TLoginForm : Form
     {
-        static Mailer mailer = new();
+        static ContactMailer mailer = new();
 
         public List<Provider> providerList = new()
         {
@@ -23,15 +23,18 @@ namespace wfGreenMail
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Mailer.Username = edtUser.Text;
-            Mailer.Password = edtPass.Text;
+            this.Cursor = Cursors.AppStarting;
+            ContactMailer.Username = edtUser.Text;
+            ContactMailer.Password = edtPass.Text;
             if (!mailer.Authenticate())
             {
                 MessageBox.Show("Either your username or password is incorrect");
+                this.Cursor = Cursors.Default;
             }
             else
             {
                 TMainForm mainForm = new(mailer);
+                this.Cursor = Cursors.Default;
                 this.Hide();
                 mainForm.ShowDialog();
                 this.Close();
@@ -53,7 +56,7 @@ namespace wfGreenMail
         //destructor
         ~TLoginForm()
         {
-            Mailer.client.Disconnect(true);
+            ContactMailer.client.Disconnect(true);
         }
 
         private void edtPass_KeyDown(object sender, KeyEventArgs e)

@@ -16,17 +16,18 @@ namespace wfGreenMail
 {
     public partial class TEditForm : Form
     {
-        Mailer mailer;
+        ContactMailer
+            mailer;
         Contact Contact;
         private List<string> Attachments = new();
-        public TEditForm(Mailer mailer)
+        public TEditForm(ContactMailer mailer)
         {
             this.mailer = mailer;
             
             InitializeComponent();
         }
 
-        public TEditForm(Mailer mailer, Contact contact)
+        public TEditForm(ContactMailer mailer, Contact contact)
         {
             Contact = contact;
             this.mailer = mailer;
@@ -46,8 +47,8 @@ namespace wfGreenMail
         {
             try
             {
-                EmailDto dto = new(Mailer.Username, edtEmail.Text, edtSubject.Text, HtmlEditor.DocumentHTML, Attachments);
-                await Mailer.sendMail(dto);
+                EmailDto dto = new(ContactMailer.Username, edtEmail.Text, edtSubject.Text, HtmlEditor.DocumentHTML, Attachments);
+                await ContactMailer.sendMail(dto);
                 MessageBox.Show("E-Mail sent succesfully");
             }
             catch (Exception ex)

@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using caAutoMailing;
 using Task = Microsoft.Win32.TaskScheduler.Task;
 
 namespace wfGreenMail.Forms
@@ -21,6 +22,10 @@ namespace wfGreenMail.Forms
         public TAutomizeForm()
         {
             InitializeComponent();
+            dpStartDate.MinDate = DateTime.Now;
+            dpStartTime.MinDate = DateTime.Now;
+            dpExpireDate.MinDate = DateTime.Now;
+            dpExpireTime.MinDate = DateTime.Now;
         }
 
         private void rbOnce_CheckedChanged(object sender, EventArgs e)
@@ -67,7 +72,7 @@ namespace wfGreenMail.Forms
                 #region UI 
                 selectedRB = 2;
                 lblSpan.Text = "weeks on";
-                clbDays.Left = 240;
+                clbDays.Left = 280;
                 lblRepeat.Visible = true;
                 lblSpan.Visible = true;
                 edtRepeat.Visible = true;
@@ -88,7 +93,7 @@ namespace wfGreenMail.Forms
             if (rbMonthly.Checked)
             {
                 #region UI 
-                selectedRB = 4;
+                selectedRB = 3;
                 clbDays.Left = 163;
                 lblDays.Visible = true;
                 lblMonths.Visible = true;
@@ -139,6 +144,7 @@ namespace wfGreenMail.Forms
         private void registerTaskMonthly()
         {
             using (TaskService ts = new TaskService())
+            using (ReadWriteINIfile writer = new(Environment.CurrentDirectory + "\\AutoMail\\monthlytask_" + DateTime.Now.ToString("dd_MM_yyyy_HH_mm") + ".ini"))
             {
                 TaskDefinition td = ts.NewTask();
                 td.RegistrationInfo.Description = "Green Mail automated monthly E-Mail";
@@ -153,21 +159,23 @@ namespace wfGreenMail.Forms
                 };
                 if (cbExp.Checked) trigger.EndBoundary = dpExpireDate.Value.Date + TimeSpan.FromHours(dpExpireTime.Value.Hour) + TimeSpan.FromMinutes(dpExpireTime.Value.Minute);
                 td.Triggers.Add(trigger);
-                string[] args = new string[6];
-                args[0] = Mailer.Host;
-                args[1] = Mailer.Port.ToString();
-                args[2] = Mailer.Username;
-                args[3] = Mailer.Password;
-                args[4] = edtSubj.Text;
-                args[5] = MailPath;
-                td.Actions.Add(Environment.CurrentDirectory + "\\AutoMail\\caAutoMailing.exe", args[0] + " " + args[1] + " " + args[2] + " " + args[3] + " " + args[4] + " " + args[5]);
-                ts.RootFolder.RegisterTaskDefinition(@"Green Mail automated monthly Email Task", td);
+                writer.WriteINI("ACCESS", "HOST", ContactMailer.Host);
+                writer.WriteINI("ACCESS", "PORT", ContactMailer.Port.ToString());
+                writer.WriteINI("ACCESS", "USER", ContactMailer.Username);
+                writer.WriteINI("ACCESS", "PASS", ContactMailer.Password);
+                writer.WriteINI("DATA", "SUBJECT", edtSubj.Text);
+                writer.WriteINI("DATA", "BODY", MailPath);
+                writer.WriteINI("DATA", "ATTACHMENTS", string.Join(';', Attachments));
+                writer.WriteINI("DATA", "ADRESSES", string.Join(';', Attachments)); //TODO generate List of Contacts
+                td.Actions.Add(Environment.CurrentDirectory + "\\AutoMail\\caAutoMailing.exe", writer.path);
+                ts.RootFolder.RegisterTaskDefinition(@"Green Mail automated monthly Email Task " + Guid.NewGuid().ToString(), td);
             }
         }
 
         private void registerTaskWeekly()
         {
             using (TaskService ts = new TaskService())
+            using (ReadWriteINIfile writer = new(Environment.CurrentDirectory + "\\AutoMail\\weeklytask_" + DateTime.Now.ToString("dd_MM_yyyy_HH_mm") + ".ini"))
             { 
                 TaskDefinition td = ts.NewTask();
                 td.RegistrationInfo.Description = "Green Mail automated weekly E-Mail";
@@ -181,21 +189,22 @@ namespace wfGreenMail.Forms
                 };
                 if (cbExp.Checked) trigger.EndBoundary = dpExpireDate.Value.Date + TimeSpan.FromHours(dpExpireTime.Value.Hour) + TimeSpan.FromMinutes(dpExpireTime.Value.Minute);
                 td.Triggers.Add(trigger);
-                string[] args = new string[6];
-                args[0] = Mailer.Host;
-                args[1] = Mailer.Port.ToString();
-                args[2] = Mailer.Username;
-                args[3] = Mailer.Password;
-                args[4] = edtSubj.Text;
-                args[5] = MailPath;
-                td.Actions.Add(Environment.CurrentDirectory + "\\AutoMail\\caAutoMailing.exe", args[0] + " " + args[1] + " " + args[2] + " " + args[3] + " " + args[4] + " " + args[5]);
-                ts.RootFolder.RegisterTaskDefinition(@"Green Mail automated weekly Email Task", td);
+                writer.WriteINI("ACCESS", "HOST", ContactMailer.Host);
+                writer.WriteINI("ACCESS", "PORT", ContactMailer.Port.ToString());
+                writer.WriteINI("ACCESS", "USER", ContactMailer.Username);
+                writer.WriteINI("ACCESS", "PASS", ContactMailer.Password);
+                writer.WriteINI("DATA", "SUBJECT", edtSubj.Text);
+                writer.WriteINI("DATA", "BODY", MailPath);
+                writer.WriteINI("DATA", "ATTACHMENTS", string.Join(';', Attachments));
+                td.Actions.Add(Environment.CurrentDirectory + "\\AutoMail\\caAutoMailing.exe", writer.path);
+                ts.RootFolder.RegisterTaskDefinition(@"Green Mail automated weekly Email Task " + Guid.NewGuid().ToString(), td);
             }
         }
 
         private void registerTaskDaily()
         {
             using (TaskService ts = new TaskService())
+            using (ReadWriteINIfile writer = new(Environment.CurrentDirectory + "\\AutoMail\\dailytask_" + DateTime.Now.ToString("dd_MM_yyyy_HH_mm") + ".ini"))
             {
                 TaskDefinition td = ts.NewTask();
                 td.RegistrationInfo.Description = "Green Mail automated daily E-Mail";
@@ -203,43 +212,48 @@ namespace wfGreenMail.Forms
                 Trigger trigger = new DailyTrigger
                 {
                     StartBoundary = dpStartDate.Value.Date + TimeSpan.FromHours(dpStartTime.Value.Hour) + TimeSpan.FromMinutes(dpStartTime.Value.Minute),
+                    DaysInterval = short.Parse(edtRepeat.Text)
+
                 };
+                
                 if (cbExp.Checked) trigger.EndBoundary = dpExpireDate.Value.Date + TimeSpan.FromHours(dpExpireTime.Value.Hour) + TimeSpan.FromMinutes(dpExpireTime.Value.Minute);
                 td.Triggers.Add(trigger);
-                string[] args = new string[6];
-                args[0] = Mailer.Host;
-                args[1] = Mailer.Port.ToString();
-                args[2] = Mailer.Username;
-                args[3] = Mailer.Password;
-                args[4] = edtSubj.Text;
-                args[5] = MailPath;
-                td.Actions.Add(Environment.CurrentDirectory + "\\AutoMail\\caAutoMailing.exe", args[0] + " " + args[1] + " " + args[2] + " " + args[3] + " " + args[4] + " " + args[5]);
-                ts.RootFolder.RegisterTaskDefinition(@"Green Mail automated daily Email Task", td);
+                writer.WriteINI("ACCESS", "HOST", ContactMailer.Host);
+                writer.WriteINI("ACCESS", "PORT", ContactMailer.Port.ToString());
+                writer.WriteINI("ACCESS", "USER", ContactMailer.Username);
+                writer.WriteINI("ACCESS", "PASS", ContactMailer.Password);
+                writer.WriteINI("DATA", "SUBJECT", edtSubj.Text);
+                writer.WriteINI("DATA", "BODY", MailPath);
+                writer.WriteINI("DATA", "ATTACHMENTS", string.Join(';', Attachments));
+                td.Actions.Add(Environment.CurrentDirectory + "\\AutoMail\\caAutoMailing.exe", writer.path);
+                ts.RootFolder.RegisterTaskDefinition(@"Green Mail automated daily Email Task " + Guid.NewGuid().ToString(), td);
             }
         }
 
         private void registerTaskOnce()
         {
+            
             using (TaskService ts = new TaskService())
+            using (ReadWriteINIfile writer = new(Environment.CurrentDirectory + "\\AutoMail\\task_" + DateTime.Now.ToString("dd_MM_yyyy_HH_mm") + ".ini"))
             {
                 TaskDefinition td = ts.NewTask();
                 td.RegistrationInfo.Description = "Green Mail automated E-Mail";
-
                 Trigger trigger = new TimeTrigger
                 {
                     StartBoundary = dpStartDate.Value.Date + TimeSpan.FromHours(dpStartTime.Value.Hour) + TimeSpan.FromMinutes(dpStartTime.Value.Minute),
                 };
                 if (cbExp.Checked) trigger.EndBoundary = dpExpireDate.Value.Date + TimeSpan.FromHours(dpExpireTime.Value.Hour) + TimeSpan.FromMinutes(dpExpireTime.Value.Minute);
                 td.Triggers.Add(trigger);
-                string[] args = new string[6];
-                args[0] = Mailer.Host;
-                args[1] = Mailer.Port.ToString();
-                args[2] = Mailer.Username;
-                args[3] = Mailer.Password;
-                args[4] = edtSubj.Text;
-                args[5] = MailPath;
-                td.Actions.Add(Environment.CurrentDirectory + "\\AutoMail\\caAutoMailing.exe", args[0] + " " + args[1] + " " + args[2] + " " + args[3] + " " + args[4] + " " + args[5]);
-                ts.RootFolder.RegisterTaskDefinition(@"Green Mail automated Email Task", td);
+                writer.WriteINI("ACCESS", "HOST", ContactMailer.Host);
+                writer.WriteINI("ACCESS", "PORT", ContactMailer.Port.ToString());
+                writer.WriteINI("ACCESS", "USER", ContactMailer.Username);
+                writer.WriteINI("ACCESS", "PASS", ContactMailer.Password);
+                writer.WriteINI("DATA", "SUBJECT", edtSubj.Text);
+                writer.WriteINI("DATA", "BODY", MailPath);
+                writer.WriteINI("DATA", "ATTACHMENTS", string.Join(';', Attachments));
+                writer.WriteINI("DATA", "ADRESSES", "dani.mannsroller@googlemail.com");
+                td.Actions.Add(Environment.CurrentDirectory + "\\AutoMail\\caAutoMailing.exe", writer.path);
+                ts.RootFolder.RegisterTaskDefinition(@"Green Mail automated Email Task " + Guid.NewGuid().ToString(), td);
             }
         }
 
