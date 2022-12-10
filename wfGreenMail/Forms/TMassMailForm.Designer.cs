@@ -139,6 +139,7 @@
             // btnAttach
             // 
             this.btnAttach.BackgroundImage = global::wfGreenMail.Properties.Resources.paperclip;
+            this.btnAttach.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAttach.FlatAppearance.BorderSize = 0;
             this.btnAttach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAttach.ForeColor = System.Drawing.Color.White;
@@ -236,6 +237,7 @@
             // btnSend
             // 
             this.btnSend.BackColor = System.Drawing.Color.SlateGray;
+            this.btnSend.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSend.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSend.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -250,6 +252,7 @@
             // btnContacts
             // 
             this.btnContacts.BackColor = System.Drawing.Color.SlateGray;
+            this.btnContacts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnContacts.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnContacts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContacts.ForeColor = System.Drawing.SystemColors.ControlLight;
@@ -264,6 +267,7 @@
             // btnMessage
             // 
             this.btnMessage.BackColor = System.Drawing.Color.SlateGray;
+            this.btnMessage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMessage.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMessage.ForeColor = System.Drawing.SystemColors.ControlLight;

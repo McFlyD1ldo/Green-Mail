@@ -14,11 +14,11 @@ namespace wfGreenMail.Forms
 {
     public partial class TMassMailForm : Form
     {
-        Mailer mailer;
+        ContactMailer mailer;
         ContactDBContext GreenMailDB;
         string messageBody;
         private List<string> Attachments = new();
-        public TMassMailForm(Mailer mailer)
+        public TMassMailForm(ContactMailer mailer)
         {
             this.mailer = mailer;
             InitializeComponent();
@@ -54,7 +54,7 @@ namespace wfGreenMail.Forms
 
         private async void btnSend_Click(object sender, EventArgs e)
         {
-            EmailDto dto = new(Mailer.Username, edtSubj.Text, htmlMessage.DocumentHTML, Attachments);
+            EmailDto dto = new(ContactMailer.Username, edtSubj.Text, htmlMessage.DocumentHTML, Attachments);
             List<Contact> contacts = new();
             List<string> adresses = new();
             using (ContactDBContext db = new())
@@ -65,7 +65,7 @@ namespace wfGreenMail.Forms
             {
                 adresses.Add(contact.Email);
             }
-            await Mailer.sendMassMail(adresses, dto);
+            await ContactMailer.sendMassMail(adresses, dto);
         }
 
         private void btnAttach_Click(object sender, EventArgs e)

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "clMailer", "clMailer\clMail
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wfGreenMail", "wfGreenMail\wfGreenMail.csproj", "{53161E9A-E11A-47B1-9656-3CE4E2AA3ED5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "caAutoMailing", "caAutoMailing\caAutoMailing.csproj", "{FDA8FF1C-F1AF-419A-8784-DD4F59CCA6BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "caAutoMailing", "caAutoMailing\caAutoMailing.csproj", "{FDA8FF1C-F1AF-419A-8784-DD4F59CCA6BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
