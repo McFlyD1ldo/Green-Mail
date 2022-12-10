@@ -15,10 +15,10 @@ namespace wfGreenMail.Forms
 {
     public partial class TMainForm : Form
     {
-        Mailer mailer;
+        ContactMailer mailer;
         ContactDBContext GreenMailDB;
 
-        public TMainForm(Mailer mailer)
+        public TMainForm(ContactMailer mailer)
         {
             this.mailer = mailer;
             InitializeComponent();
@@ -82,6 +82,54 @@ namespace wfGreenMail.Forms
         {
             GreenMailDB.SaveChanges();
             grdContacts.DataSource = GreenMailDB.Contacts.Local.ToBindingList();
+        }
+
+        private void tcEditMode_SelectedIndexChanging(object sender, TabPageChangeEventArgs e)
+        {
+            GreenMailDB.SaveChanges();
+            if (e.NextTab == tabPage1)
+            {
+                edtFName.Text = string.Empty;
+                edtLName.Text = string.Empty;
+                edtEmail.Text = string.Empty;
+                tdmBday.Value = DateTime.MinValue;
+                GreenMailDB.Contacts.Load();
+                grdContacts.DataSource = GreenMailDB.Contacts.Local.ToBindingList();
+            }
+            else
+            {
+                edtsFname.Text = string.Empty;
+                edtsLname.Text = string.Empty;
+                edtsEmail.Text = string.Empty;
+                dpsBday.Value = DateTime.MinValue;
+                grdContacts.DataSource = null;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            List<Contact> result = GreenMailDB.Contacts.Local.ToList();
+            if (edtsFname.Text != string.Empty)
+            {
+                result = result.Where(c => c.FName.Contains(edtsFname.Text)).ToList();
+            }
+            if (edtsLname.Text != string.Empty)
+            {
+                result = result.Where(c => c.LName.Contains(edtsLname.Text)).ToList();
+            }
+            if (edtsEmail.Text != string.Empty)
+            {
+                result = result.Where(c => c.Email.Contains(edtsEmail.Text)).ToList();
+            }
+            if (dpsBday.Value != DateTime.Parse("1753-01-01"))
+            {
+                result = result.Where(c => c.Birthday == dpsBday.Value).ToList();
+            }
+            if (cbsNewsletter.Checked)
+            {
+                result = result.Where(c => c.Newsletter == cbsNewsletter.Checked).ToList();
+            }
+            grdContacts.DataSource = result;
         }
     }
 }
