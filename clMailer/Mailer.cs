@@ -86,7 +86,7 @@ namespace clMailer
                 mail.Subject = dto.Subject;
                 mail.Sender = MailboxAddress.Parse(Username);
                 mail.Body = new TextPart(TextFormat.Html) { Text = dto.Body };
-                mail.Attachments.Concat(dto.Attachments);
+                foreach (var attachment in dto.Attachments) mail.Attachments.Append(attachment);
                 mails.Add(mail);
             }
             return mails;

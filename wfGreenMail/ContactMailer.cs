@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using wfGreenMail.Data;
+using clMailer;
 using Task = System.Threading.Tasks.Task;
 
 namespace wfGreenMail
