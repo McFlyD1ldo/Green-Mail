@@ -2,7 +2,7 @@
   "profiles": {
     "caAutoMailing": {
       "commandName": "Project",
-      "commandLineArgs": "smtp.gmail.com 587 dani.mannsroller@gmail.com vxfbjqocufqcajjq AutoMailTest d:\\C#\\repos\\GreenMail\\slnGreenMail\\test.html"
+      "commandLineArgs": "D:\\C#\\repos\\GreenMail\\slnGreenMail\\wfGreenMail\\bin\\\\Debug\\net6.0-windows\\AutoMail\\config_9_12_2022.ini"
     }
   }
 }
